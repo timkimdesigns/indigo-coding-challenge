@@ -24,7 +24,7 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
 
     <main class="home-screen">
         <div class="home-screen__header">
-            <div class="pl-1">
+            <div class="pl-1 h-100">
                 <img src="assets/images/Logo Name White.svg">
             </div>
             <!-- <div class="col-4"></div> -->
@@ -36,29 +36,31 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
         </div>
 
         <div class="home-screen__dashboard">
-            <div class="home-screen__dashboard">
-
-                <div class="row">
-                    <div class="col pt-4 pl-4">
-                        <h5>Welcome to</h5>
+            <div class="home-screen__dashboard__stats text-white row">
+                    <div class="col-6 d-flex align-items-center m-0">
+                            <p class="mb-0">Flight</p>
+                            <p class="mb-0 p-2">AA 4170</p>
                     </div>
+                    <div class="col-6 d-flex justify-content-end align-items-center">
+                        <p class="m-0">ETA: 3hrs 49mins</p>
+                    </div>       
+                    
+            </div>
+            <div class="home-screen__dashboard__title row">
+                <div class="col-12 pt-2 text-white">
+                    <h5>Welcome to the</h5>
+                    <h1>Air Bistro</h1>
                 </div>
-                <div class="home-screen__dashboard__title row">
-                    <div class="col pl-4">
+                
+               
+                <!-- <div class="col-12 text-white">
                         <h1>Air Bistro</h1>
-                    </div>
-                </div>
-            <div class="home-screen__dashboard__stats row">
-                <div class="col pt-2"><p>Flight #</p></div>
-                
+                    </div> -->
             </div>
-            <div class="home-screen__dashboard__stats row">
-                <div class="col pt-2"><p>ETA | Destination</p></div>
-                
-            </div>
-            
-            <div class="home-screen__dashboard__stats__spacer row"></div>
-           <div class="home-screen__dashboard__cta d-flex align-items-center justify-content-center text-white mt-5"><h2>Order Food</h2></div>
+            <div class="home-screen__dashboard__spacer row"></div>
+
+            <div class="home-screen__dashboard__cta d-flex align-items-center justify-content-center text-white mt-5">
+                <h2>View Menu</h2>
             </div>
         </div>
     </main>
