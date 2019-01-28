@@ -176,20 +176,65 @@
             transition: left .4s ease-in-out .1s, opacity .4s ease-in-out .1s;
 
             &__item {
-                height: auto;
-                width: auto;
                 border-bottom: solid black 2px;
                 font-family: $bodyFont;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                max-height: 10vh;
+                width: 100%;
+                display: inline-block;
+                position: relative;
+                transition: max-height 1s cubic-bezier(.5, 1, 0, 1);
+                overflow: hidden;
+
+                button {
+                    -webkit-appearance: none;
+                    background-color: transparent;
+                    color: rgb(179, 213, 125);
+                    font-family: $bodyFont;
+                    padding: .5rem 1rem;
+                    border: solid rgb(179, 213, 125) 2px;
+                    border-radius: 50px;
+                    margin: 0 0 1rem 0;
+                    opacity: 0;
+                    transition: opacity .5s ease-in-out;
+                }
+                
+                &.active {
+                    max-height: 100vh;
+                    display: inline-block;
+                    
+                    button {
+                        opacity: 1;
+                    }
+                }
             }
+
         }
 
+        // &__sub-item {
+        //     font-family: $bodyFont;
+        //     border-bottom: solid grey 2px;
+        //     max-height: 5vh;
+        //     width: 100%;
+        //     display: inline-block;
+        //     position: relative;
+        //     transition: max-height .5s cubic-bezier(.5, 1, 0, 1);
+        //     overflow: hidden;
+        //     div {
+        //         opacity: 0;
+        //         transition: opacity .15s ease-in-out;
+        //     }
+
+        //     &.active {
+        //         max-height: 100vh;
+                
+        //         div {
+        //             opacity: 1;
+        //         }
+        //     }
+        // }
 
         &.sub-menu-active {
-
-            // .home-screen__dashboard__drawer {
-            //     opacity: .1;
-            // }
 
             .home-screen__dashboard__sub-drawer {
                 left: 0;
