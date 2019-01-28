@@ -23,9 +23,10 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
             enable it to continue.</strong></noscript>
 
     <main class="home-screen isloading" id="mainContainer">
-        <div class="loading-container h-100 w-100 justify-content-center align-items-center">
+        <div class="loading-container flex-column justify-content-center align-items-center">
+            <p>Loading</p>
             <span>
-                <i class="fas fa-circle-notch fa-spin"></i>
+                <i class="fas fa-circle-notch fa-spin fa-3x"></i>
             </span>
         </div>
         <div class="home-screen__header">
@@ -33,10 +34,8 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
                 <img src="assets/images/Logo Name White.svg">
             </div>
             <!-- <div class="col-4"></div> -->
-            <div class="home-screen__header__menu" id="hamburgerMenu">
-                <div class="hamburger1"></div>
-                <div class="hamburger2"></div>
-                <div class="hamburger3"></div>
+            <div class="home-screen__header__shopping-cart" id="shopping-cart">
+                <span><i class="fas fa-shopping-cart" style="color: white;"></i></span>
             </div>
         </div>
 
@@ -64,15 +63,29 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
             </div>
             <div class="home-screen__dashboard__spacer row"></div>
 
-            <div class="home-screen__dashboard__cta d-flex align-items-center justify-content-center text-white mt-5">
+            <div class="home-screen__dashboard__cta d-flex align-items-center justify-content-center text-white mt-5"
+                id="cta">
                 <h4>View Menu</h4>
             </div>
 
             <div class="home-screen__dashboard__drawer">
-                <div class="home-screen__dashboard__drawer__item text-center pt-4" rv-each-item="state.topMenu">
-                        <p> { item.category } </p>
-                </div> 
+                <div class="home-screen__dashboard__drawer__close-button d-flex justify-content-end pr-3 pt-3">
+                    <span id="close-button"><i class="fas fa-times fa-2x"></i></span>
+                </div>
+                <div class="home-screen__dashboard__drawer__item text-center pt-4" rv-each-item="state.topMenu"
+                    rv-data-index="%item%">
+                    <p> { item.category } </p>
+                </div>
             </div>
+            <div class="home-screen__dashboard__sub-drawer">
+                <div class="home-screen__dashboard__sub-drawer__close-button d-flex justify-content-end pr-3 pt-3">
+                    <span id="close-button"><i class="fas fa-times fa-2x"></i></span>
+                </div>
+                <div class="home-screen__dashboard__sub-drawer__item text-center pt-4" rv-each-item="state.selectedSubItem">
+                    <p> { item.subCategory } </p>
+                </div>
+            </div>
+
         </div>
     </main>
 
