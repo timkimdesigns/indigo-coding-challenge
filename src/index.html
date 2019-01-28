@@ -30,8 +30,8 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
             </span>
         </div>
         <div class="home-screen__header">
-            <div class="pl-1 h-100">
-                <img src="assets/images/Logo Name White.svg">
+            <div class="pl-1">
+                <img src="assets/images/Logo Name White.svg" id="logo">
             </div>
             <!-- <div class="col-4"></div> -->
             <div class="home-screen__header__shopping-cart" id="shopping-cart">
@@ -70,7 +70,7 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
 
             <div class="home-screen__dashboard__drawer">
                 <div class="home-screen__dashboard__drawer__close-button d-flex justify-content-end pr-3 pt-3">
-                    <span id="close-button"><i class="fas fa-times fa-2x"></i></span>
+                    <span id="close-button1"><i class="fas fa-times fa-2x"></i></span>
                 </div>
                 <div class="home-screen__dashboard__drawer__item text-center pt-4" rv-each-item="state.topMenu"
                     rv-data-index="%item%">
@@ -79,10 +79,13 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
             </div>
             <div class="home-screen__dashboard__sub-drawer">
                 <div class="home-screen__dashboard__sub-drawer__close-button d-flex justify-content-end pr-3 pt-3">
-                    <span id="close-button"><i class="fas fa-times fa-2x"></i></span>
+                    <span id="close-button2"><i class="fas fa-times fa-2x"></i></span>
                 </div>
-                <div class="home-screen__dashboard__sub-drawer__item text-center pt-4" rv-each-item="state.selectedSubItem">
+                <div class="home-screen__dashboard__sub-drawer__item pt-4" rv-each-item="state.selectedSubItem">
                     <p> { item.subCategory } </p>
+                    <div rv-each-subitem="state.selectedSubItem">
+                        <p> { item.details.price }</p>
+                    </div>
                 </div>
             </div>
 

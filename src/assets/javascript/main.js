@@ -20,14 +20,32 @@
 
 	//click event for view menu button
 	$("#cta").click(function () {
-		$(this).toggleClass("change");
+		// $(this).toggleClass("change");
 		$(".home-screen__dashboard__drawer").addClass("drawer-active");
 	});
 
 	//click event for modal close button
-	$("#close-button").click(function () {
-		$(this).toggleClass("change");
+	$("#close-button1").click(function () {
+		// $(this).toggleClass("change");
 		$(".home-screen__dashboard__drawer").removeClass("drawer-active");
+	});
+
+	//click event for modal close button
+	$("#close-button2").click(function () {
+		// $(this).toggleClass("change");
+		$(".home-screen__dashboard").removeClass("sub-menu-active");
+	});
+
+	//click event for logo to return to home-screen
+	$("#logo").click(function() {
+		var topMenuOpen = $(".home-screen__dashboard__drawer").hasClass("drawer-active");
+		var subMenuOpen = $(".home-screen__dashboard").hasClass("sub-menu-active");
+		if(topMenuOpen) {
+			$(".home-screen__dashboard__drawer").removeClass("drawer-active");
+		};
+		if(subMenuOpen) {
+			$(".home-screen__dashboard").removeClass("sub-menu-active")
+		};
 	});
 
 	$(document).on("click", ".home-screen__dashboard__drawer__item", function () {

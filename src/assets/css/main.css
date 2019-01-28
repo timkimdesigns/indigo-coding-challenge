@@ -26,31 +26,6 @@ html, body {
   display: flex;
 }
 
-.hamburger1, .hamburger2, .hamburger3 {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-/* rotate the first bar */
-.change .hamburger1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 4px);
-  transform: rotate(-45deg) translate(-9px, 4px);
-}
-
-/* Fade out second bar */
-.change .hamburger2 {
-  opacity: 0;
-}
-
-/*rotate the last bar */
-.change .hamburger3 {
-  -webkit-transform: rotate(45deg) translate(-10px, -5px);
-  transform: rotate(45deg) translate(-10px, -5px);
-}
-
 .home-screen {
   max-width: 768px;
   width: 100%;
@@ -126,10 +101,12 @@ html, body {
   position: absolute;
   left: -100%;
   top: 0;
-  transition: left 0.4s ease-in-out 0.1s;
+  opacity: 0.1;
+  transition: left 0.4s ease-in-out 0.1s, opacity 0.4s ease-in-out 0.1s;
 }
 .home-screen__dashboard__drawer.drawer-active {
   left: 0;
+  opacity: 1;
 }
 .home-screen__dashboard__drawer__item {
   height: auto;
@@ -145,7 +122,8 @@ html, body {
   position: absolute;
   left: 100%;
   top: 0;
-  transition: left 0.4s ease-in-out 0.1s;
+  opacity: 0.1;
+  transition: left 0.4s ease-in-out 0.1s, opacity 0.4s ease-in-out 0.1s;
 }
 .home-screen__dashboard__sub-drawer__item {
   height: auto;
@@ -156,7 +134,7 @@ html, body {
 }
 .home-screen__dashboard.sub-menu-active .home-screen__dashboard__sub-drawer {
   left: 0;
-  box-shadow: -8px -2px 2px -4px rgba(0, 0, 0, 0.096);
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
