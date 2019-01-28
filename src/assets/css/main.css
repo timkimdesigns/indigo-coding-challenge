@@ -127,7 +127,7 @@ html, body {
 }
 .home-screen__dashboard__sub-drawer__item {
   height: auto;
-  width: 100%;
+  width: auto;
   border-bottom: solid black 2px;
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
