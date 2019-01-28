@@ -10,6 +10,20 @@ html, body {
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.loading-container {
+  display: none;
+}
+
+.isloading .home-screen__header {
+  display: none;
+}
+.isloading .home-screen__dashboard {
+  display: none;
+}
+.isloading .loading-container {
+  display: flex;
+}
+
 .hamburger1, .hamburger2, .hamburger3 {
   width: 30px;
   height: 4px;

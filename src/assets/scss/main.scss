@@ -2,6 +2,28 @@
 
 @import "__base";
 
+.loading-container {
+    display: none;
+}
+
+.isloading {
+    
+    .home-screen {
+       
+        &__header {
+            display: none;
+        }
+        &__dashboard {
+            display: none;
+        }
+    }
+
+    .loading-container {
+        display: flex;
+    }
+    
+}
+
 
 .hamburger1, .hamburger2, .hamburger3 {
     width: 30px;
