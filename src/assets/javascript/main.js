@@ -69,7 +69,10 @@
 	$(document).on("click", "#add-btn", function() {
 		var purchasedIndex = $(this).data("index");
 		$state.cart.push($state.selectedSubItem[purchasedIndex]);
-		console.log($state);
+		$(this).parents(".home-screen__dashboard__sub-drawer").addClass("show-banner");
+		setTimeout(function(){
+			$(".home-screen__dashboard__sub-drawer").removeClass("show-banner");
+		},200)
 	});
 
 

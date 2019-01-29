@@ -33,7 +33,7 @@
     margin-left: 50%;
     transform: translate(-50%, 0);
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
 
     &__header {
         height: 60px;
@@ -178,7 +178,28 @@
                         opacity: 1;
                     }
                 }
+            
             }
+
+            &.show-banner {
+                .banner {
+                  display: block;
+                }
+                
+                button {
+                  display:none;
+                }
+              }
+              
+              .banner {
+                display:none;
+                padding: .5rem;
+                background: rgb(179, 213, 125);
+                width: 100%;
+                height: auto;
+                color: white;
+                margin: 20px auto;
+              }
 
         }
 
@@ -196,7 +217,7 @@
             width: 100%;
             height: calc(100vh - 60px);
             position: absolute;
-            top: -100%;
+            top: 100%;
             left: 0;
             opacity: .1;
             transition: top .2s ease-in-out, opacity .2s ease-in-out .1s;

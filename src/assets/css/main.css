@@ -33,6 +33,7 @@ html, body {
   margin-left: 50%;
   transform: translate(-50%, 0);
   position: relative;
+  overflow: hidden;
 }
 .home-screen__header {
   height: 60px;
@@ -153,6 +154,21 @@ html, body {
 .home-screen__dashboard__sub-drawer__item.active button {
   opacity: 1;
 }
+.home-screen__dashboard__sub-drawer.show-banner .banner {
+  display: block;
+}
+.home-screen__dashboard__sub-drawer.show-banner button {
+  display: none;
+}
+.home-screen__dashboard__sub-drawer .banner {
+  display: none;
+  padding: 0.5rem;
+  background: #b3d57d;
+  width: 100%;
+  height: auto;
+  color: white;
+  margin: 20px auto;
+}
 .home-screen__dashboard.sub-menu-active .home-screen__dashboard__sub-drawer {
   left: 0;
   opacity: 1;
@@ -162,7 +178,7 @@ html, body {
   width: 100%;
   height: calc(100vh - 60px);
   position: absolute;
-  top: -100%;
+  top: 100%;
   left: 0;
   opacity: 0.1;
   transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out 0.1s;
