@@ -129,6 +129,7 @@ html, body {
   opacity: 1;
 }
 .home-screen__dashboard__drawer__item {
+  cursor: pointer;
   height: auto;
   width: 100%;
   border-bottom: solid black 2px;
@@ -146,10 +147,11 @@ html, body {
   transition: left 0.4s ease-in-out 0.1s, opacity 0.4s ease-in-out 0.1s;
 }
 .home-screen__dashboard__sub-drawer__item {
+  cursor: pointer;
   border-bottom: solid black 2px;
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
-  max-height: 10vh;
+  max-height: 58px;
   width: 100%;
   display: inline-block;
   position: relative;
@@ -170,7 +172,7 @@ html, body {
   transition: opacity 0.2s ease-in-out;
 }
 .home-screen__dashboard__sub-drawer__item.active {
-  max-height: 100vh;
+  max-height: 250px;
 }
 .home-screen__dashboard__sub-drawer__item.active button {
   opacity: 1;

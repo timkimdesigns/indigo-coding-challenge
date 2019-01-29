@@ -146,6 +146,7 @@
 
 
             &__item {
+                cursor: pointer;
                 height: auto;
                 width: 100%;
                 border-bottom: solid black 2px;
@@ -168,10 +169,11 @@
             transition: left .4s ease-in-out .1s, opacity .4s ease-in-out .1s;
 
             &__item {
+                cursor: pointer;
                 border-bottom: solid black 2px;
                 font-family: $bodyFont;
                 font-size: 1.1rem;
-                max-height: 10vh;
+                max-height: 58px;
                 width: 100%;
                 display: inline-block;
                 position: relative;
@@ -193,7 +195,7 @@
                 }
                 
                 &.active {
-                    max-height: 100vh;
+                    max-height: 250px;
                     
                     button {
                         opacity: 1;
