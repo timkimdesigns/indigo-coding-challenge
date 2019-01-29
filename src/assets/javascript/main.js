@@ -50,6 +50,13 @@
 		$(".home-screen__dashboard__cart").toggleClass("drawer-active");
 	});
 
+	$("#clear-btn").click(function() {
+		$state.cart = [];
+		$state.cartLength = "";
+		$(".home-screen__header__badge").removeClass("active");
+		$(".home-screen__dashboard__cart").removeClass("drawer-active");
+	});
+
 	$(document).on("click", ".home-screen__dashboard__drawer__item", function () {
 		var thisIndex = $(this).data("index");
 		handleSubmenu(thisIndex);
@@ -61,10 +68,6 @@
 	$(document).on("click", "#add-btn", function () {
 		var purchasedIndex = $(this).data("index");
 		$state.cart.push($state.selectedSubItem[purchasedIndex]);
-		$(this).parents(".home-screen__dashboard__sub-drawer").addClass("show-banner");
-		setTimeout(function () {
-			$(".home-screen__dashboard__sub-drawer").removeClass("show-banner");
-		}, 200)
 		updateCart();
 	});
 
