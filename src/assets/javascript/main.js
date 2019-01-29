@@ -1,7 +1,7 @@
 // jQuery wrapper
 (function ($, window, document) {
 	var $state = {
-		cartLength: [],
+		cartLength: "",
 		totalPrice: "",
 		cart: [],
 		selectedSubItem: [],
@@ -136,11 +136,7 @@
 		if($state.cart.length > 0) {
 			var currentCartLength = $state.cart.length;
 			$(".home-screen__header__badge").addClass("active");
-			while($state.cartLength > 0) {
-				$state.cartLength.pop();
-			}
-			$state.cartLength.push(currentCartLength);
-
+			$state.cartLength = currentCartLength;
 		} else {
 			$(".home-screen__header__badge").removeClass("active");
 		}

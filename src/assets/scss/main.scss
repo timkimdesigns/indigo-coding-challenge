@@ -10,6 +10,8 @@
     margin-left: 50%;
     transform: translate(-50%, 0);
     position: relative;
+    opacity: 1;
+    transition: opacity 2s ease-in-out .1s;
     overflow: hidden;
 
     .loading-container {
@@ -22,6 +24,7 @@
     &.isloading {
     
         .home-screen {
+            opacity: 0;
            
             &__header {
                 display: none;
@@ -68,6 +71,7 @@
             width: 18px;
             border-radius: 50%;
             position: absolute;
+            font-size: .8rem;
             top: 18%;
             right: 6%;
             z-index: 1;
@@ -236,6 +240,7 @@
             width: 100%;
             height: calc(100vh - 60px);
             position: absolute;
+            color: white;
             top: 100%;
             left: 0;
             opacity: .1;
@@ -256,14 +261,23 @@
                 font-size: 1.2rem;
             }
 
-            button {
-                -webkit-appearance: none;
+            &__order-btn {
                 background-color: rgb(13, 103, 187);
                 color: rgb(255, 255, 255);
                 font-family: $bodyFont;
                 padding: .5rem 1rem;
                 border-radius: 10px;
-                border: none;
+                margin: 0 0 1rem 0;
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
+
+            &__clear-btn {
+                background-color: rgb(216, 88, 29);
+                color: rgb(255, 255, 255);
+                font-family: $bodyFont;
+                padding: .5rem 1rem;
+                border-radius: 10px;
                 margin: 0 0 1rem 0;
                 opacity: 1;
                 transition: opacity .5s ease-in-out;

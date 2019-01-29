@@ -33,7 +33,7 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
             <div class="pl-1">
                 <img src="assets/images/Logo Name White.svg" id="logo">
             </div>
-            <div class="home-screen__header__badge text-white text-center pb-2">
+            <div class="home-screen__header__badge text-white text-center">
                 <p>{ state.cartLength }</p>
             </div>
             <div class="home-screen__header__shopping-cart" id="cart-logo">
@@ -105,15 +105,21 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
                             <p> $ { item.details.price } </p>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col d-flex justify-content-end">
                             <p>Total Price: $</p>
                         </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="home-screen__dashboard__cart__order-btn col-4 text-center">
+                            <p class="m-0">Order Food</p>
+                        </div>
+                        <div class="home-screen__dashboard__cart__clear-btn col-4 text-center">
+                            <p class="m-0">Clear Cart</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <button type="button">Order Food</button>
-                    </div>
-
+                        
+                    
             </div>
 
         </div>
