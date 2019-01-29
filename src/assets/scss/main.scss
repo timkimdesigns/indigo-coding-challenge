@@ -2,29 +2,6 @@
 
 @import "__base";
 
-.loading-container {
-    display: none;
-    height: 100%;
-    width: 100%;
-}
-
-.isloading {
-    
-    .home-screen {
-       
-        &__header {
-            display: none;
-        }
-        &__dashboard {
-            display: none;
-        }
-    }
-
-    .loading-container {
-        display: flex;
-    }
-    
-}
 
 .home-screen {
     max-width: 768px;
@@ -34,6 +11,32 @@
     transform: translate(-50%, 0);
     position: relative;
     overflow: hidden;
+
+    .loading-container {
+        display: none;
+        height: 100%;
+        width: 100%;
+    }
+    
+
+    &.isloading {
+    
+        .home-screen {
+           
+            &__header {
+                display: none;
+            }
+            &__dashboard {
+                display: none;
+            }
+        }
+    
+        .loading-container {
+            display: flex;
+        }
+        
+        
+    }
 
     &__header {
         height: 60px;
@@ -54,9 +57,25 @@
         &__shopping-cart {
             cursor: pointer;
             position: absolute;
-            right: 5%;
+            right: 8%;
             top: 30%;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
+            z-index: 0;
+        }
+        &__badge {
+            background-color: rgb(245, 63, 63);
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            position: absolute;
+            top: 18%;
+            right: 6%;
+            z-index: 1;
+            display: none;
+            &.active {
+                display: block;
+            }
+
         }
     }
 

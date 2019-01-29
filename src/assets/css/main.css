@@ -10,22 +10,6 @@ html, body {
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.loading-container {
-  display: none;
-  height: 100%;
-  width: 100%;
-}
-
-.isloading .home-screen__header {
-  display: none;
-}
-.isloading .home-screen__dashboard {
-  display: none;
-}
-.isloading .loading-container {
-  display: flex;
-}
-
 .home-screen {
   max-width: 768px;
   width: 100%;
@@ -34,6 +18,20 @@ html, body {
   transform: translate(-50%, 0);
   position: relative;
   overflow: hidden;
+}
+.home-screen .loading-container {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.home-screen.isloading .home-screen__header {
+  display: none;
+}
+.home-screen.isloading .home-screen__dashboard {
+  display: none;
+}
+.home-screen.isloading .loading-container {
+  display: flex;
 }
 .home-screen__header {
   height: 60px;
@@ -52,9 +50,24 @@ html, body {
 .home-screen__header__shopping-cart {
   cursor: pointer;
   position: absolute;
-  right: 5%;
+  right: 8%;
   top: 30%;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
+  z-index: 0;
+}
+.home-screen__header__badge {
+  background-color: #f53f3f;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 18%;
+  right: 6%;
+  z-index: 1;
+  display: none;
+}
+.home-screen__header__badge.active {
+  display: block;
 }
 .home-screen__dashboard {
   background-image: url("https://alaskaairblog.files.wordpress.com/2018/01/2010s-alaska.jpg");

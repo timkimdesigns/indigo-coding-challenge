@@ -1,6 +1,7 @@
 // jQuery wrapper
 (function ($, window, document) {
 	var $state = {
+		cartLength: [],
 		totalPrice: "",
 		cart: [],
 		selectedSubItem: [],
@@ -39,22 +40,13 @@
 	});
 
 	//click event for logo to return to home-screen
-	$("#logo").click(function() {
-		var topMenuOpen = $(".home-screen__dashboard__drawer").hasClass("drawer-active");
-		var subMenuOpen = $(".home-screen__dashboard").hasClass("sub-menu-active");
-		var cartOpen = $(".home-screen__dashboard__cart").hasClass("drawer-active");
-		if(topMenuOpen) {
-			$(".home-screen__dashboard__drawer").removeClass("drawer-active");
-		};
-		if(subMenuOpen) {
-			$(".home-screen__dashboard").removeClass("sub-menu-active");
-		};
-		if(cartOpen) {
-			$(".home-screen__dashboard__cart").removeClass("drawer-active");
-		}
+	$("#logo").click(function () {
+		$(".home-screen__dashboard__drawer").removeClass("drawer-active");
+		$(".home-screen__dashboard").removeClass("sub-menu-active");
+		$(".home-screen__dashboard__cart").removeClass("drawer-active");
 	});
 
-	$("#cart-logo").click(function() {
+	$("#cart-logo").click(function () {
 		$(".home-screen__dashboard__cart").toggleClass("drawer-active");
 	});
 
@@ -66,13 +58,14 @@
 		$(this).toggleClass("active");
 	});
 
-	$(document).on("click", "#add-btn", function() {
+	$(document).on("click", "#add-btn", function () {
 		var purchasedIndex = $(this).data("index");
 		$state.cart.push($state.selectedSubItem[purchasedIndex]);
 		$(this).parents(".home-screen__dashboard__sub-drawer").addClass("show-banner");
-		setTimeout(function(){
+		setTimeout(function () {
 			$(".home-screen__dashboard__sub-drawer").removeClass("show-banner");
-		},200)
+		}, 200)
+		updateCart();
 	});
 
 
@@ -121,19 +114,13 @@
 
 	function handleSubmenu(index) {
 		var selectedMenuItem = $state.topMenu[index];
-		// var hasSubDrawer = selectedMenuItem.subDrawer ? true : false;
 		var isOpen = $(".home-screen__dashboard").hasClass("sub-menu-active");
 		if (isOpen) {
 			$(".home-screen__dashboard").removeClass("sub-menu-active")
 		} else {
-			// if (hasSubDrawer) {
-				$(".home-screen__dashboard").addClass("sub-menu-active");
-				buildSubmenu(selectedMenuItem);
-			// } else { 
-				// alert("Going To: " + selectedMenuItem.url)
-			// }
+			$(".home-screen__dashboard").addClass("sub-menu-active");
+			buildSubmenu(selectedMenuItem);
 		}
-		
 	}
 	function buildSubmenu(selectedMenuItem) {
 		var selectedSubMenu = selectedMenuItem.subDrawer;
@@ -143,6 +130,22 @@
 		for (var i = 0; i < selectedSubMenu.length; i++) {
 			$state.selectedSubItem.push(selectedSubMenu[i]);
 		}
+	}
+
+	function updateCart() {
+		if($state.cart.length > 0) {
+			var currentCartLength = $state.cart.length;
+			$(".home-screen__header__badge").addClass("active");
+			while($state.cartLength > 0) {
+				$state.cartLength.pop();
+			}
+			$state.cartLength.push(currentCartLength);
+
+		} else {
+			$(".home-screen__header__badge").removeClass("active");
+		}
+
+
 	}
 
 })(jQuery, window, document);
