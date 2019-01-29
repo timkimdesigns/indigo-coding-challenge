@@ -33,7 +33,6 @@ html, body {
   margin-left: 50%;
   transform: translate(-50%, 0);
   position: relative;
-  overflow: hidden;
 }
 .home-screen__header {
   height: 60px;
@@ -143,14 +142,13 @@ html, body {
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0.5rem 1rem;
   border: solid #b3d57d 2px;
-  border-radius: 50px;
+  border-radius: 10px;
   margin: 0 0 1rem 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 .home-screen__dashboard__sub-drawer__item.active {
   max-height: 100vh;
-  display: inline-block;
 }
 .home-screen__dashboard__sub-drawer__item.active button {
   opacity: 1;
@@ -158,6 +156,39 @@ html, body {
 .home-screen__dashboard.sub-menu-active .home-screen__dashboard__sub-drawer {
   left: 0;
   opacity: 1;
+}
+.home-screen__dashboard__cart {
+  background-color: white;
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  opacity: 0.1;
+  transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out 0.1s;
+}
+.home-screen__dashboard__cart.drawer-active {
+  top: 0;
+  opacity: 1;
+}
+.home-screen__dashboard__cart__item {
+  height: auto;
+  width: 100%;
+  border-bottom: solid black 2px;
+  font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+}
+.home-screen__dashboard__cart button {
+  -webkit-appearance: none;
+  background-color: #0d67bb;
+  color: white;
+  font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 1rem 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=main.css.map */

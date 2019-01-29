@@ -26,34 +26,6 @@
     
 }
 
-
-// .hamburger1, .hamburger2, .hamburger3 {
-//     width: 30px;
-//     height: 4px;
-//     background-color: rgb(255, 255, 255);
-//     margin: 4px 0;
-//     transition: .4s;
-// }
-
-// /* rotate the first bar */
-// .change .hamburger1 {
-//     -webkit-transform: rotate(-45deg) translate(-9px, 4px);
-//     transform: rotate(-45deg) translate(-9px, 4px);
-// }
-
-// /* Fade out second bar */
-
-// .change .hamburger2 {
-//     opacity: 0;
-// }
-
-// /*rotate the last bar */
-
-// .change .hamburger3 {
-//     -webkit-transform: rotate(45deg) translate(-10px, -5px);
-//     transform: rotate(45deg) translate(-10px, -5px);
-// }
-
 .home-screen {
     max-width: 768px;
     width: 100%;
@@ -61,7 +33,7 @@
     margin-left: 50%;
     transform: translate(-50%, 0);
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     &__header {
         height: 60px;
@@ -193,7 +165,7 @@
                     font-family: $bodyFont;
                     padding: .5rem 1rem;
                     border: solid rgb(179, 213, 125) 2px;
-                    border-radius: 50px;
+                    border-radius: 10px;
                     margin: 0 0 1rem 0;
                     opacity: 0;
                     transition: opacity .5s ease-in-out;
@@ -201,7 +173,6 @@
                 
                 &.active {
                     max-height: 100vh;
-                    display: inline-block;
                     
                     button {
                         opacity: 1;
@@ -211,28 +182,6 @@
 
         }
 
-        // &__sub-item {
-        //     font-family: $bodyFont;
-        //     border-bottom: solid grey 2px;
-        //     max-height: 5vh;
-        //     width: 100%;
-        //     display: inline-block;
-        //     position: relative;
-        //     transition: max-height .5s cubic-bezier(.5, 1, 0, 1);
-        //     overflow: hidden;
-        //     div {
-        //         opacity: 0;
-        //         transition: opacity .15s ease-in-out;
-        //     }
-
-        //     &.active {
-        //         max-height: 100vh;
-                
-        //         div {
-        //             opacity: 1;
-        //         }
-        //     }
-        // }
 
         &.sub-menu-active {
 
@@ -240,6 +189,47 @@
                 left: 0;
                 opacity: 1;
             }
+        }
+
+        &__cart {
+            background-color: white;
+            width: 100%;
+            height: calc(100vh - 60px);
+            position: absolute;
+            top: -100%;
+            left: 0;
+            opacity: .1;
+            transition: top .2s ease-in-out, opacity .2s ease-in-out .1s;
+
+            &.drawer-active {
+                top:0;
+                opacity: 1;
+
+            }
+
+
+            &__item {
+                height: auto;
+                width: 100%;
+                border-bottom: solid black 2px;
+                font-family: $bodyFont;
+                font-size: 1.2rem;
+            }
+
+            button {
+                -webkit-appearance: none;
+                background-color: rgb(13, 103, 187);
+                color: rgb(255, 255, 255);
+                font-family: $bodyFont;
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                border: none;
+                margin: 0 0 1rem 0;
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
+
+        
         }
         
 

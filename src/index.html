@@ -34,7 +34,7 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
                 <img src="assets/images/Logo Name White.svg" id="logo">
             </div>
             <!-- <div class="col-4"></div> -->
-            <div class="home-screen__header__shopping-cart" id="shopping-cart">
+            <div class="home-screen__header__shopping-cart" id="cart-logo">
                 <span><i class="fas fa-shopping-cart" style="color: white;"></i></span>
             </div>
         </div>
@@ -83,18 +83,38 @@ PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”
                 </div>
                 <div class="home-screen__dashboard__sub-drawer__item" rv-each-item="state.selectedSubItem">
                     <div class="row m-0 p-0">
-                        <div class="col-8 pt-3 pl-4">
+                        <div class="col-8 pt-3 pl-2">
                             <p> { item.subCategory } </p>
                         </div>   
-                        <div class="col-4 pt-3 pr-4">
-                            <p> { item.details.price }</p>
+                        <div class="col-4 d-flex justify-content-end pt-3 pr-2">
+                            <p> $ { item.details.price }</p>
                         </div>
                     </div>
                     
                     <div class="text-center">
-                        <button type="button">Add To Cart</button>
+                        <button type="button" id="add-btn" rv-data-index="%item%">Add To Cart</button>
                     </div>
                 </div>
+            </div>
+
+            <div class="home-screen__dashboard__cart">
+                    <div class="home-screen__dashboard__cart__item row m-0 p-0" rv-each-item="state.cart">
+                        <div class="col-8 pt-3 pl-2">
+                            <p> { item.subCategory } </p>
+                        </div>   
+                        <div class="col-4 d-flex justify-content-end pt-3 pr-2">
+                            <p> $ { item.details.price } </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-end">
+                            <p>Total Price: $</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button">Order Food</button>
+                    </div>
+
             </div>
 
         </div>

@@ -1,6 +1,8 @@
 // jQuery wrapper
 (function ($, window, document) {
 	var $state = {
+		totalPrice: "",
+		cart: [],
 		selectedSubItem: [],
 		topMenu: [
 
@@ -40,21 +42,35 @@
 	$("#logo").click(function() {
 		var topMenuOpen = $(".home-screen__dashboard__drawer").hasClass("drawer-active");
 		var subMenuOpen = $(".home-screen__dashboard").hasClass("sub-menu-active");
+		var cartOpen = $(".home-screen__dashboard__cart").hasClass("drawer-active");
 		if(topMenuOpen) {
 			$(".home-screen__dashboard__drawer").removeClass("drawer-active");
 		};
 		if(subMenuOpen) {
-			$(".home-screen__dashboard").removeClass("sub-menu-active")
+			$(".home-screen__dashboard").removeClass("sub-menu-active");
 		};
+		if(cartOpen) {
+			$(".home-screen__dashboard__cart").removeClass("drawer-active");
+		}
+	});
+
+	$("#cart-logo").click(function() {
+		$(".home-screen__dashboard__cart").toggleClass("drawer-active");
 	});
 
 	$(document).on("click", ".home-screen__dashboard__drawer__item", function () {
 		var thisIndex = $(this).data("index");
 		handleSubmenu(thisIndex);
-	})
+	});
 	$(document).on("click", ".home-screen__dashboard__sub-drawer__item", function () {
 		$(this).toggleClass("active");
-	})
+	});
+
+	$(document).on("click", "#add-btn", function() {
+		var purchasedIndex = $(this).data("index");
+		$state.cart.push($state.selectedSubItem[purchasedIndex]);
+		console.log($state);
+	});
 
 
 	//Other functions go here
@@ -70,7 +86,7 @@
 				matchFoodToCategory(categoryData, foodData);
 			});
 		});
-	}
+	};
 
 	//Loops through aqcuired data and creates object with new properties including subDrawer for to build sub-menu
 	function matchFoodToCategory(categories, food) {
@@ -90,7 +106,7 @@
 							quantity: 1
 						}
 					});
-				}
+				};
 			});
 			$state.topMenu.push(tempObj);
 
