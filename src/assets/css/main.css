@@ -158,23 +158,23 @@ html, body {
   transition: max-height 0.5s cubic-bezier(0.5, 1, 0, 1);
   overflow: hidden;
 }
-.home-screen__dashboard__sub-drawer__item button {
-  -webkit-appearance: none;
+.home-screen__dashboard__sub-drawer__item__button {
   cursor: pointer;
   background-color: #b3d57d;
   color: white;
+  max-width: 50%;
   font-family: ‘Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0.5rem 1rem;
   border: solid #b3d57d 2px;
   border-radius: 10px;
-  margin: 0 0 1rem 0;
+  margin: auto;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 .home-screen__dashboard__sub-drawer__item.active {
   max-height: 250px;
 }
-.home-screen__dashboard__sub-drawer__item.active button {
+.home-screen__dashboard__sub-drawer__item.active .home-screen__dashboard__sub-drawer__item__button {
   opacity: 1;
 }
 .home-screen__dashboard.sub-menu-active .home-screen__dashboard__sub-drawer {
